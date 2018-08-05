@@ -12,6 +12,9 @@
 		8EC5D4A62114D15D006CA135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC5D4A42114D15D006CA135 /* Main.storyboard */; };
 		8EC5D4A82114D15E006CA135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC5D4A72114D15E006CA135 /* Assets.xcassets */; };
 		8EC5D4AB2114D15E006CA135 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC5D4A92114D15E006CA135 /* LaunchScreen.storyboard */; };
+		8EC5D4B32114D527006CA135 /* Personal Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5D4B22114D527006CA135 /* Personal Info.swift */; };
+		8EC5D4B52114D623006CA135 /* Entrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5D4B42114D623006CA135 /* Entrant.swift */; };
+		8EC5D4B92114E94F006CA135 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5D4B82114E94F006CA135 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8EC5D4A72114D15E006CA135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EC5D4AA2114D15E006CA135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EC5D4AC2114D15E006CA135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EC5D4B22114D527006CA135 /* Personal Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Personal Info.swift"; sourceTree = "<group>"; };
+		8EC5D4B42114D623006CA135 /* Entrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrant.swift; sourceTree = "<group>"; };
+		8EC5D4B82114E94F006CA135 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				8EC5D4A02114D15D006CA135 /* AppDelegate.swift */,
 				8EC5D4A22114D15D006CA135 /* ViewController.swift */,
+				8EC5D4B42114D623006CA135 /* Entrant.swift */,
+				8EC5D4B22114D527006CA135 /* Personal Info.swift */,
+				8EC5D4B82114E94F006CA135 /* Data.swift */,
 				8EC5D4A42114D15D006CA135 /* Main.storyboard */,
 				8EC5D4A72114D15E006CA135 /* Assets.xcassets */,
 				8EC5D4A92114D15E006CA135 /* LaunchScreen.storyboard */,
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC5D4B52114D623006CA135 /* Entrant.swift in Sources */,
+				8EC5D4B92114E94F006CA135 /* Data.swift in Sources */,
 				8EC5D4A32114D15D006CA135 /* ViewController.swift in Sources */,
 				8EC5D4A12114D15D006CA135 /* AppDelegate.swift in Sources */,
+				8EC5D4B32114D527006CA135 /* Personal Info.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59LKW45FXJ;
 				INFOPLIST_FILE = "Amusement Park Pass Generator P1/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,7 +303,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Bing-Bang-Boom.Amusement-Park-Pass-Generator-P1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -301,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59LKW45FXJ;
 				INFOPLIST_FILE = "Amusement Park Pass Generator P1/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Bing-Bang-Boom.Amusement-Park-Pass-Generator-P1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
