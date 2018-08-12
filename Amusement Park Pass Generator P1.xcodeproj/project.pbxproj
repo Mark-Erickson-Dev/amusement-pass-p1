@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EB950522120AF83000B4C2A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB950512120AF83000B4C2A /* Error.swift */; };
 		8EC5D4A12114D15D006CA135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5D4A02114D15D006CA135 /* AppDelegate.swift */; };
 		8EC5D4A32114D15D006CA135 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5D4A22114D15D006CA135 /* ViewController.swift */; };
 		8EC5D4A62114D15D006CA135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC5D4A42114D15D006CA135 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8EB950512120AF83000B4C2A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		8EC5D49D2114D15D006CA135 /* Amusement Park Pass Generator P1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amusement Park Pass Generator P1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC5D4A02114D15D006CA135 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EC5D4A22114D15D006CA135 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				8EC5D4B42114D623006CA135 /* Entrant.swift */,
 				8EC5D4B22114D527006CA135 /* Personal Info.swift */,
 				8EC5D4B82114E94F006CA135 /* Data.swift */,
+				8EB950512120AF83000B4C2A /* Error.swift */,
 				8EC5D4A22114D15D006CA135 /* ViewController.swift */,
 				8EC5D4A42114D15D006CA135 /* Main.storyboard */,
 				8EC5D4A72114D15E006CA135 /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 				8EC5D4B92114E94F006CA135 /* Data.swift in Sources */,
 				8EC5D4A32114D15D006CA135 /* ViewController.swift in Sources */,
 				8EC5D4A12114D15D006CA135 /* AppDelegate.swift in Sources */,
+				8EB950522120AF83000B4C2A /* Error.swift in Sources */,
 				8EC5D4B32114D527006CA135 /* Personal Info.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
