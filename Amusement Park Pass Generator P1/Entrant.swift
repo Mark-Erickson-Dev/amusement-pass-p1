@@ -15,7 +15,6 @@ protocol AreaAccessible {
     var isRideControlAreaAccessible: Bool  { get set }
     var isMaintenanceAreaAccessible: Bool { get set }
     var isOfficeAreaAccessible: Bool { get set }
-    
 }
 
 enum RideAccessType: String {
@@ -50,6 +49,7 @@ class Entrant: AreaAccessible {
 
     var personalInfo: PersonalInfo?
     
+    var personalInfoIsRequired: Bool
     var dobIsRequired: Bool
     var ssnIsRequired: Bool
     var nameIsRequired: Bool
@@ -81,6 +81,7 @@ class Entrant: AreaAccessible {
         self.merchandiseDiscount = 0.00
         self.passType = .Entrant
         self.personalInfo = nil
+        self.personalInfoIsRequired = false
         self.dobIsRequired = false
         self.ssnIsRequired = false
         self.nameIsRequired = false
@@ -110,9 +111,9 @@ class VIPGuest: ClassicGuest {
 
 class FreeChildGuest: ClassicGuest {
     
-    init(personalInfo: PersonalInfo) {
+    override init() {
         super.init()
-        self.personalInfo = personalInfo
+        self.personalInfoIsRequired = true
         self.dobIsRequired = true
         self.passType = .FreeChildGuest
     }
@@ -122,6 +123,7 @@ class Employee: Entrant {
     
     override init() {
         super.init()
+        self.personalInfoIsRequired = true
         self.dobIsRequired = true
         self.ssnIsRequired = true
         self.nameIsRequired = true
@@ -134,39 +136,36 @@ class Employee: Entrant {
 
 class FoodServicesEmployee: Employee {
     
-    init(personalInfo: PersonalInfo) {
+    override init() {
         super.init()
         self.isKitchenAreaAccessible = true
-        self.personalInfo = personalInfo
         self.passType = .FoodServicesEmployee
     }
 }
 
 class RideServicesEmployee: Employee {
     
-    init(personalInfo: PersonalInfo) {
+    override init() {
         super.init()
         self.isRideControlAreaAccessible = true
-        self.personalInfo = personalInfo
         self.passType = .RideServicesEmployee
     }
 }
 
 class MaintenanceEmployee: Employee {
     
-    init(personalInfo: PersonalInfo) {
+    override init() {
         super.init()
         self.isKitchenAreaAccessible = true
         self.isRideControlAreaAccessible = true
         self.isMaintenanceAreaAccessible = true
-        self.personalInfo = personalInfo
         self.passType = .MaintenanceEmployee
     }
 }
 
 class Manager: Employee {
     
-    init(managerType: ManagerType, personalInfo: PersonalInfo) {
+    init(managerType: ManagerType) {
         
         super.init()
         self.managerType = managerType
@@ -175,7 +174,6 @@ class Manager: Employee {
         self.isMaintenanceAreaAccessible = true
         self.isOfficeAreaAccessible = true
         self.foodDiscount = 0.25
-        self.personalInfo = personalInfo
         self.passType = .Manager
     }
 }

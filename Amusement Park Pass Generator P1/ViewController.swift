@@ -10,14 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var didValidate: Bool = false
     var entrant: Entrant!
     let currentDate = Date()
     let calendar = Calendar.current
     
     enum InfoError: Error {
         
-        case InvalidFirstName, InvalidLastName, InvalidStreetAddress, InvalidCity, InvalidState, InvalidZipCode, InvalidDateOfBirth, InvalidSSN
+        case InvalidFirstName, InvalidLastName, InvalidStreetAddress, InvalidCity, InvalidState, InvalidZipCode, InvalidDateOfBirth, InvalidChildAge, InvalidSSN
         
         var description: String {
             
@@ -29,6 +28,7 @@ class ViewController: UIViewController {
             case .InvalidState: return "Enter a valid state."
             case .InvalidZipCode: return "Enter a valid zip code."
             case .InvalidDateOfBirth: return "Enter a valid date of birth."
+            case .InvalidChildAge: return "Child must be under 5 years old."
             case .InvalidSSN: return "Enter a valid social security number."
             }
         }
@@ -42,8 +42,13 @@ class ViewController: UIViewController {
         
         entrant.passType == .Manager ? print("Pass Type: \(entrant.managerType?.rawValue ?? "")\n") : print("Pass Type: \(entrant.passType.rawValue)\n")
         
+        // Get personal info
+        if entrant.personalInfoIsRequired {
+            entrant.personalInfo = PersonalData().personalInfo
+        }
+
         do {
-            // Get entrant's personal information and validate it, if applicable
+            // Validate entrant's personal info, if applicable
             if let personalInfo = entrant.personalInfo {
                 try validatePersonalInfo(personalInfo: personalInfo)
             }
@@ -53,6 +58,9 @@ class ViewController: UIViewController {
             
         } catch InfoError.InvalidDateOfBirth {
             print(InfoError.InvalidDateOfBirth.description)
+            
+        } catch InfoError.InvalidChildAge {
+            print(InfoError.InvalidChildAge.description)
             
         } catch InfoError.InvalidSSN {
             print(InfoError.InvalidSSN.description)
@@ -104,7 +112,7 @@ class ViewController: UIViewController {
             if entrant.passType == .FreeChildGuest {
                 guard age < 5 else {
                     
-                    throw InfoError.InvalidDateOfBirth
+                    throw InfoError.InvalidChildAge
                 }
             }
             
