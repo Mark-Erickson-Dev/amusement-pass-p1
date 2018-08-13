@@ -25,7 +25,13 @@ class ViewController: UIViewController {
         
         // Get personal info
         if entrant.personalInfoIsRequired {
-            entrant.personalInfo = PersonalData().personalInfo
+            guard let personalInfo = PersonalData().getPersonalData() else {
+                print("Uncomment a personalInfo object from the Data file.")
+                return
+            }
+            entrant.personalInfo = personalInfo
+        } else {
+            print("No personal info required")
         }
 
         do {
